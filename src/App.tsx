@@ -1,14 +1,7 @@
-import { useEffect } from 'react'
 import { useBoard } from './features/board/context/BoardContext'
-import { createFakeBoard } from './data/fakeBoard'
 
 function App() {
   const { state, dispatch } = useBoard()
-
-  useEffect(() => {
-    const board = createFakeBoard()
-    dispatch({ type: 'LOAD_BOARD', payload: board })
-  }, [dispatch])
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
